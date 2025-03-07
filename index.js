@@ -8,7 +8,16 @@ const app = express();
 const userRoutes = require('./routes/userRoutes');
 const taskRoutes = require('./routes/taskRoutes');
 
-app.use(cors());
+app.use(cors(
+  {
+  origin: "https://task-kohl-five.vercel.app/", // Allow only your frontend domain
+  credentials: true,  // Allow cookies if using authentication
+}
+));
+
+app.use(express.json());
+
+app.listen(5000, () => console.log("Server running on port 5000"));
 
 require('./db');
 require('events').EventEmitter.defaultMaxListeners = 15; 

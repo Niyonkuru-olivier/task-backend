@@ -17,7 +17,7 @@ app.use(cors(
 
 app.use(express.json());
 
-app.listen(5000, () => console.log("Server running on port 5000"));
+app.listen(5001, () => console.log("Server running on port 5001"));
 
 require('./db');
 require('events').EventEmitter.defaultMaxListeners = 15; 
